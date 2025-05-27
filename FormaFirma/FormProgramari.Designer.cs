@@ -28,27 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstProgramari = new System.Windows.Forms.ListBox();
             this.dgvFirme = new System.Windows.Forms.DataGridView();
             this.dvgPersoane = new System.Windows.Forms.DataGridView();
             this.dgvFirma = new System.Windows.Forms.DataGridView();
             this.dgvPersoana = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPersoane)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersoana)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstProgramari
-            // 
-            this.lstProgramari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstProgramari.FormattingEnabled = true;
-            this.lstProgramari.ItemHeight = 16;
-            this.lstProgramari.Location = new System.Drawing.Point(0, 0);
-            this.lstProgramari.Name = "lstProgramari";
-            this.lstProgramari.Size = new System.Drawing.Size(800, 450);
-            this.lstProgramari.TabIndex = 0;
-            this.lstProgramari.SelectedIndexChanged += new System.EventHandler(this.lstProgramari_SelectedIndexChanged);
             // 
             // dgvFirme
             // 
@@ -77,6 +67,7 @@
             this.dgvFirma.RowTemplate.Height = 24;
             this.dgvFirma.Size = new System.Drawing.Size(386, 311);
             this.dgvFirma.TabIndex = 1;
+            this.dgvFirma.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFirma_CellContentClick);
             // 
             // dgvPersoana
             // 
@@ -89,30 +80,51 @@
             this.dgvPersoana.TabIndex = 2;
             this.dgvPersoana.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersoana_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Programari firma";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(441, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Programari persoana fizica";
+            // 
             // FormProgramari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPersoana);
             this.Controls.Add(this.dgvFirma);
-            this.Controls.Add(this.lstProgramari);
             this.Name = "FormProgramari";
             this.Text = "FormProgramari";
+            this.Load += new System.EventHandler(this.FormProgramari_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPersoane)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersoana)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.ListBox lstProgramari;
         private System.Windows.Forms.DataGridView dgvFirme;
         private System.Windows.Forms.DataGridView dvgPersoane;
         private System.Windows.Forms.DataGridView dgvFirma;
         private System.Windows.Forms.DataGridView dgvPersoana;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

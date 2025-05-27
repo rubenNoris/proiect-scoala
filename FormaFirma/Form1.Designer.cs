@@ -68,12 +68,11 @@
             // 
             // btnVeziProgramari
             // 
-            this.btnVeziProgramari.Location = new System.Drawing.Point(262, 367);
+            this.btnVeziProgramari.Location = new System.Drawing.Point(276, 381);
             this.btnVeziProgramari.Name = "btnVeziProgramari";
-            this.btnVeziProgramari.Size = new System.Drawing.Size(254, 23);
-            this.btnVeziProgramari.TabIndex = 3;
-            this.btnVeziProgramari.Text = "Vizualizare programari";
-            this.btnVeziProgramari.UseVisualStyleBackColor = true;
+            this.btnVeziProgramari.Size = new System.Drawing.Size(150, 30);
+            this.btnVeziProgramari.TabIndex = 0;
+            this.btnVeziProgramari.Text = "Vezi date firme/persoane";
             this.btnVeziProgramari.Click += new System.EventHandler(this.btnVeziProgramari_Click);
             // 
             // label2

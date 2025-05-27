@@ -9,10 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using proiect_scoala;
 
+
 namespace FormaFirma
 {
     public partial class Form1: Form
     {
+        string caleFisierFirme = "firme.json";
+        string caleFisierPersoane = "persoane.json";
+
         public Form1()
         {
             InitializeComponent();
@@ -32,8 +36,9 @@ namespace FormaFirma
 
         private void btnVeziProgramari_Click(object sender, EventArgs e)
         {
-            FormProgramari formProgramari = new FormProgramari();
-            formProgramari.ShowDialog();
+            VizualizareDateForm vizForm = new VizualizareDateForm();
+            vizForm.ShowDialog();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)

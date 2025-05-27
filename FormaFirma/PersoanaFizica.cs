@@ -68,5 +68,7 @@ namespace proiect_scoala
         {
             return persoane.FirstOrDefault(p => p.Nume.Equals(numeCautat, StringComparison.OrdinalIgnoreCase));
         }
+        public PersoanaFizica() { }
+
     }
 }

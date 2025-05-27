@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.checkBoxConfirmare = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtDenumire
@@ -175,11 +176,23 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Status Firma";
             // 
+            // checkBoxConfirmare
+            // 
+            this.checkBoxConfirmare.AutoSize = true;
+            this.checkBoxConfirmare.Location = new System.Drawing.Point(15, 364);
+            this.checkBoxConfirmare.Name = "checkBoxConfirmare";
+            this.checkBoxConfirmare.Size = new System.Drawing.Size(264, 20);
+            this.checkBoxConfirmare.TabIndex = 16;
+            this.checkBoxConfirmare.Text = "Confirm corectitudinea datelor introduse";
+            this.checkBoxConfirmare.UseVisualStyleBackColor = true;
+            this.checkBoxConfirmare.CheckedChanged += new System.EventHandler(this.checkBoxConfirmare_CheckedChanged);
+            // 
             // FormFirma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBoxConfirmare);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -220,5 +233,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBoxConfirmare;
     }
 }

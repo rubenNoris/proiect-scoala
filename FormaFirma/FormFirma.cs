@@ -60,18 +60,66 @@ namespace FormaFirma
         {
             try
             {
+                // 1. Verificare CheckBox
+                if (!checkBoxConfirmare.Checked)
+                {
+                    MessageBox.Show("Trebuie să confirmi că datele sunt corecte.");
+                    return;
+                }
+
+                // 2. Preluare date
+                string denumire = txtDenumire.Text.Trim();
+                string cui = txtCUI.Text.Trim();
+                string reprezentant = textReprezentant.Text.Trim();
+                string telefon = textTelefon.Text.Trim();
+                string email = textEmail.Text.Trim();
+                TipFirma tip = (TipFirma)cmbTip.SelectedItem;
+                StatusFirma status = (StatusFirma)cmbStatus.SelectedItem;
+
+                // 3. Validări
+                if (string.IsNullOrWhiteSpace(denumire) ||
+                    string.IsNullOrWhiteSpace(cui) ||
+                    string.IsNullOrWhiteSpace(reprezentant) ||
+                    string.IsNullOrWhiteSpace(telefon) ||
+                    string.IsNullOrWhiteSpace(email))
+                {
+                    MessageBox.Show("Toate câmpurile trebuie completate.");
+                    return;
+                }
+
+                if (!cui.All(char.IsDigit))
+                {
+                    MessageBox.Show("CUI-ul trebuie să conțină doar cifre.");
+                    return;
+                }
+
+                if (!telefon.All(char.IsDigit) || telefon.Length != 10)
+                {
+                    MessageBox.Show("Numărul de telefon trebuie să conțină exact 10 cifre.");
+                    return;
+                }
+
+                if (!email.Contains("@"))
+                {
+                    MessageBox.Show("Email-ul trebuie să conțină caracterul '@'.");
+                    return;
+                }
+                DateAplicatie.SalveazaDate();
+
+                // 4. Creare firmă
                 var firmaNoua = new Firma(
                     id: DateAplicatie.Firme.Count + 1,
-                    denumire: txtDenumire.Text,
-                    cui: txtCUI.Text,
-                    reprezentantLegal: textReprezentant.Text,
-                    telefon: textTelefon.Text,
-                    email: textEmail.Text,
-                    tip: (TipFirma)cmbTip.SelectedItem,
-                    status: (StatusFirma)cmbStatus.SelectedItem
+                    denumire: denumire,
+                    cui: cui,
+                    reprezentantLegal: reprezentant,
+                    telefon: telefon,
+                    email: email,
+                    tip: tip,
+                    status: status
                 );
 
                 Firma.AdaugaFirma(DateAplicatie.Firme, firmaNoua);
+                DateAplicatie.SalveazaFirmeInTxt("firme.txt");
                 MessageBox.Show("Firma a fost adăugată cu succes!");
                 this.Close();
             }
@@ -80,6 +128,20 @@ namespace FormaFirma
                 MessageBox.Show("Eroare la adăugare: " + ex.Message);
             }
 
+           
+            
+
+           
+        }
+
+
+        private void checkBoxConfirmare_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        public static void AdaugaFirma(List<Firma> listaFirme, Firma firmaNoua)
+        {
+            listaFirme.Add(firmaNoua);
         }
     }
 }

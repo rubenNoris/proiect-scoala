@@ -72,5 +72,7 @@ namespace proiect_scoala
         {
             return firme.FirstOrDefault(f => f.CUI.Equals(cuiCautat, StringComparison.OrdinalIgnoreCase));
         }
+        public Firma() { }
+
     }
 }

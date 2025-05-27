@@ -43,6 +43,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSalveaza = new System.Windows.Forms.Button();
+            this.radioConfirma = new System.Windows.Forms.RadioButton();
+            this.groupBoxConfirmare = new System.Windows.Forms.GroupBox();
+            this.radioNuConfirma = new System.Windows.Forms.RadioButton();
+            this.groupBoxConfirmare.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNume
@@ -157,7 +161,7 @@
             // 
             // btnSalveaza
             // 
-            this.btnSalveaza.Location = new System.Drawing.Point(129, 289);
+            this.btnSalveaza.Location = new System.Drawing.Point(129, 374);
             this.btnSalveaza.Name = "btnSalveaza";
             this.btnSalveaza.Size = new System.Drawing.Size(221, 23);
             this.btnSalveaza.TabIndex = 13;
@@ -165,11 +169,48 @@
             this.btnSalveaza.UseVisualStyleBackColor = true;
             this.btnSalveaza.Click += new System.EventHandler(this.btnSalveaza_Click);
             // 
+            // radioConfirma
+            // 
+            this.radioConfirma.AutoSize = true;
+            this.radioConfirma.Location = new System.Drawing.Point(6, 21);
+            this.radioConfirma.Name = "radioConfirma";
+            this.radioConfirma.Size = new System.Drawing.Size(172, 20);
+            this.radioConfirma.TabIndex = 14;
+            this.radioConfirma.TabStop = true;
+            this.radioConfirma.Text = "Confirm datele introduse";
+            this.radioConfirma.UseVisualStyleBackColor = true;
+            this.radioConfirma.CheckedChanged += new System.EventHandler(this.radioConfirma_CheckedChanged);
+            // 
+            // groupBoxConfirmare
+            // 
+            this.groupBoxConfirmare.Controls.Add(this.radioNuConfirma);
+            this.groupBoxConfirmare.Controls.Add(this.radioConfirma);
+            this.groupBoxConfirmare.Location = new System.Drawing.Point(15, 308);
+            this.groupBoxConfirmare.Name = "groupBoxConfirmare";
+            this.groupBoxConfirmare.Size = new System.Drawing.Size(502, 43);
+            this.groupBoxConfirmare.TabIndex = 15;
+            this.groupBoxConfirmare.TabStop = false;
+            this.groupBoxConfirmare.Text = "-";
+            this.groupBoxConfirmare.Enter += new System.EventHandler(this.groupBoxConfirmare_Enter);
+            // 
+            // radioNuConfirma
+            // 
+            this.radioNuConfirma.AutoSize = true;
+            this.radioNuConfirma.Location = new System.Drawing.Point(220, 21);
+            this.radioNuConfirma.Name = "radioNuConfirma";
+            this.radioNuConfirma.Size = new System.Drawing.Size(190, 20);
+            this.radioNuConfirma.TabIndex = 15;
+            this.radioNuConfirma.TabStop = true;
+            this.radioNuConfirma.Text = "Nu confirm datele introduse";
+            this.radioNuConfirma.UseVisualStyleBackColor = true;
+            this.radioNuConfirma.CheckedChanged += new System.EventHandler(this.radioNuConfirma_CheckedChanged);
+            // 
             // FormPersoana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBoxConfirmare);
             this.Controls.Add(this.btnSalveaza);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -185,6 +226,9 @@
             this.Controls.Add(this.txtNume);
             this.Name = "FormPersoana";
             this.Text = "FormPersoana";
+            this.Load += new System.EventHandler(this.FormPersoana_Load);
+            this.groupBoxConfirmare.ResumeLayout(false);
+            this.groupBoxConfirmare.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +250,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSalveaza;
+        private System.Windows.Forms.RadioButton radioConfirma;
+        private System.Windows.Forms.GroupBox groupBoxConfirmare;
+        private System.Windows.Forms.RadioButton radioNuConfirma;
     }
 }
